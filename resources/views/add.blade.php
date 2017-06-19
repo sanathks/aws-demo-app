@@ -10,25 +10,27 @@
     <div class="mdl-layout__tab-panel is-active" id="overview">
         <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
             <div class="mdl-card mdl-cell mdl-cell--12-col-desktop">
-                <form action="">
+                <form action="{{ route('store') }}" method="post">
+                    {{ csrf_field() }}
                 <div class="mdl-card__supporting-text">
                     <h4>Write a post</h4>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label demo-field">
-                            <input class="mdl-textfield__input" type="text" id="heading">
-                            <label class="mdl-textfield__label" for="heading">Heading</label>
-                        </div>
-                         <br>
-                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label demo-field">
-                            <input class="mdl-textfield__input" type="text" id="summary">
-                            <label class="mdl-textfield__label" for="summary">Summary</label>
+                            <input class="mdl-textfield__input" type="text" id="heading" name="title">
+                            <label class="mdl-textfield__label" for="heading">Title</label>
                         </div>
                      <br>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label demo-field">
-                            <textarea class="mdl-textfield__input" id="content">
-
-                            </textarea>
-                            <label class="mdl-textfield__label" for="content">Content</label>
+                            <textarea class="mdl-textfield__input" id="content" name="content"></textarea>
+                            <label class="mdl-textfield__label" for="content">Post</label>
                         </div>
+
+                    <br>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--file demo-field">
+                        <input class="mdl-textfield__input" placeholder="Featured Image" type="text" id="uploadFile" readonly/>
+                        <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
+                            <i class="material-icons">attach_file</i><input type="file" id="uploadBtn">
+                        </div>
+                    </div>
                 </div>
                 <div class="mdl-card__actions">
                     <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
@@ -41,3 +43,4 @@
         </section>
     </div>
 @endsection
+

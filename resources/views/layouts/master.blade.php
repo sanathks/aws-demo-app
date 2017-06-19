@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_purple-pink.min.css">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="{{ asset('/css/styles.css') }}">
     <style>
         #view-source {
             position: fixed;
@@ -50,7 +50,7 @@
 
 
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-            <span>This app used for demonstration purposes of AWS by CMS.</span>
+            <span>This app used for demonstration purposes of AWS Tech talk by CMS.</span>
         </div>
         @yield('menu')
     </header>
@@ -62,8 +62,9 @@
     </main>
 </div>
 <a href="https://github.com/sanathks/aws-demo-app" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">
-    See me in <img src="./images/github.png" alt="" height="30">
+    See me in <img src="{{ asset('/images/github.png') }}" alt="" height="30">
 </a>
 <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<script src="{{ asset('/js/polyfill.js') }}"></script>
 </body>
 </html>
