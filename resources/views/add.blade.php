@@ -10,13 +10,13 @@
     <div class="mdl-layout__tab-panel is-active" id="overview">
         <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
             <div class="mdl-card mdl-cell mdl-cell--12-col-desktop">
-                <form action="{{ route('store') }}" method="post">
+                <form action="{{ route('store') }}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                 <div class="mdl-card__supporting-text">
                     <h4>Write a post</h4>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label demo-field">
-                            <input class="mdl-textfield__input" type="text" id="heading" name="title">
-                            <label class="mdl-textfield__label" for="heading">Title</label>
+                            <input class="mdl-textfield__input" type="text" id="title" name="title">
+                            <label class="mdl-textfield__label" for="title">Title</label>
                         </div>
                      <br>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label demo-field">
@@ -26,9 +26,9 @@
 
                     <br>
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--file demo-field">
-                        <input class="mdl-textfield__input" placeholder="Featured Image" type="text" id="uploadFile" readonly/>
+                        <input class="mdl-textfield__input" placeholder="Featured Image" type="text" id="uploadFile" />
                         <div class="mdl-button mdl-button--primary mdl-button--icon mdl-button--file">
-                            <i class="material-icons">attach_file</i><input type="file" id="uploadBtn">
+                            <i class="material-icons">attach_file</i><input type="file" id="uploadBtn" name="file">
                         </div>
                     </div>
                 </div>

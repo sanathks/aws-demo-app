@@ -10,7 +10,7 @@
     <div class="mdl-layout__tab-panel is-active" id="overview">
         <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
             <div class="mdl-card mdl-cell mdl-cell--12-col-desktop">
-                <div class="mdl-card__supporting-text" style="background: url({{ asset('/images/github.png') }})  center center / cover; height: 300px;">
+                <div class="mdl-card__supporting-text" style="background: url({{ $post->original_image }})  center center / cover; height: 300px;">
 
                 </div>
                 <div class="mdl-card__supporting-text">

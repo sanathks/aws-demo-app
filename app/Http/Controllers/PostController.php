@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -15,7 +16,12 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        Post::create($request->all());
+        $image = $request->file('file');
+        $imageName = time() . '.' . $image->getClientOriginalExtension();
+        Storage::disk('s3_original')->put($imageName, file_get_contents($image), 'public');
+        $postData = $request->all();
+        $postData['image'] = $imageName;
+        Post::create($postData);
 
         return redirect()->route('overview');
     }
