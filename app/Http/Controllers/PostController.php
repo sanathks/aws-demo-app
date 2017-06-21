@@ -33,4 +33,24 @@ class PostController extends Controller
         return view('view')
             ->with(compact('post'));
     }
+
+    public function delete($id)
+    {
+        $post = Post::find($id);
+        $this->deleteImages($post->image);
+        $post->delete();
+        return redirect()->route('overview');
+    }
+
+    private function deleteImages($image)
+    {
+        if (Storage::disk('s3_original')->exists($image)) {
+            Storage::disk('s3_original')->delete($image);
+        }
+
+        if (Storage::disk('s3_thumbs')->exists($image)) {
+            Storage::disk('s3_thumbs')->delete($image);
+        }
+
+    }
 }

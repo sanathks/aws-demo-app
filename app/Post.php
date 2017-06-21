@@ -16,6 +16,9 @@ class Post extends Model
 
     public function getThumbAttribute()
     {
-        return Storage::disk('s3_thumbs')->url($this->image);
+        if (Storage::disk('s3_thumbs')->exists($this->image)) {
+            return Storage::disk('s3_thumbs')->url($this->image);
+        }
+        return "";
     }
 }

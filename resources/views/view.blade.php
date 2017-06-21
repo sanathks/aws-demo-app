@@ -17,6 +17,8 @@
                     <h4>{{ $post->title }}</h4>
                         {{ $post->content }}
                 </div>
+                <a href="{{ route('delete', $post->id) }}" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="width: 60px; margin: 20px;">delete</a>
+
             </div>
         </section>
     </div>

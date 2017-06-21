@@ -11,3 +11,6 @@ Route::post('post/add', "PostController@store")
 
 Route::get('post/{id}', "PostController@view")
     ->name('view');
+
+Route::get('delete/{id}', "PostController@delete")
+    ->name('delete');
