@@ -52,6 +52,8 @@
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
             <span>This app used for demonstration purposes of AWS Tech talk by CMS.</span>
         </div>
+
+        <h4 style="position: absolute; right: 10px;">{{ config('app.name') }}</h4>
         @yield('menu')
     </header>
     <main class="mdl-layout__content">
