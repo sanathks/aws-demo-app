@@ -20,7 +20,7 @@
                         </div>
                      <br>
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label demo-field">
-                            <textarea class="mdl-textfield__input" id="content" name="content"></textarea>
+                            <textarea class="mdl-textfield__input" id="content" name="content" style="height: 250px;"></textarea>
                             <label class="mdl-textfield__label" for="content">Post</label>
                         </div>
 
